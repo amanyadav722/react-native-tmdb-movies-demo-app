@@ -44,7 +44,6 @@ const MovieDetailScreen = ({ route }) => {
                 <View style={styles.additionalDetails}>
                     <Text style={styles.detail}>Release Date: {movieDetails.release_date}</Text>
                     <Text style={styles.detail}>Rating: {movieDetails.vote_average}</Text>
-                    {/* Add more movie details that you want to display */}
                 </View>
             </View>
         </ScrollView>
@@ -89,63 +88,3 @@ const styles = StyleSheet.create({
 });
 
 export default MovieDetailScreen;
-
-
-
-
-
-
-// import React, { useEffect, useState } from 'react';
-// import { View, Text, Image, ScrollView, StyleSheet } from 'react-native';
-
-// const MovieDetailScreen = ({ route }) => {
-//     const { movieId } = route.params;
-//     const [movieDetails, setMovieDetails] = useState(null);
-
-//     useEffect(() => {
-//         fetchMovieDetails();
-//     }, []);
-
-//     const fetchMovieDetails = async () => {
-//         const apiURL = `https://api.themoviedb.org/3/movie/${movieId}?api_key=7008561cb2f105ee17b8a5d3b45f60a3`;
-//         try {
-//             const response = await fetch(apiURL);
-//             const data = await response.json();
-//             setMovieDetails(data);
-//         } catch (error) {
-//             console.error(error);
-//         }
-//     };
-
-//     if (!movieDetails) {
-//         return <Text>Loading...</Text>; // Or some loading component
-//     }
-
-//     return (
-//         <ScrollView style={styles.container}>
-//             <Image source={{ uri: `https://image.tmdb.org/t/p/w500${movieDetails.poster_path}` }} style={styles.image} />
-//             <Text style={styles.title}>{movieDetails.title}</Text>
-//             {/* You can add more details as you like here */}
-//         </ScrollView>
-//     );
-// };
-
-// const styles = StyleSheet.create({
-//     container: {
-//         flex: 1,
-//     },
-//     image: {
-//         width: '100%',
-//         height: 300,
-//         resizeMode: 'cover',
-//     },
-//     title: {
-//         fontSize: 24,
-//         fontWeight: 'bold',
-//         textAlign: 'center',
-//         marginVertical: 10,
-//     },
-
-// });
-
-// export default MovieDetailScreen;
